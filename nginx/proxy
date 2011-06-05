@@ -6,7 +6,7 @@ upstream myupstream {
         fair;
 }
 server {
-    listen 80;
+    listen [::]:80;
     server_name www.example.com;
 
     access_log /path/to/access.log;

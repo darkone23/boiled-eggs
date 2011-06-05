@@ -1,0 +1,25 @@
+# nginx proxy_pass & upstream config
+# provide extra headers for the proxied env
+# serves a static dir at /static/
+upstream myupstream {
+        server X.X.X.X:XXXX;
+        fair;
+}
+server {
+    listen 80;
+    server_name www.example.com;
+
+    access_log /path/to/access.log;
+    error_log /path/to/error.log;
+
+    location / {
+        proxy_pass http://myupstream;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+
+    location /static/ {
+        root /path/to/dir/;
+    }
+}

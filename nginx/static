@@ -1,0 +1,19 @@
+# default nginx static setup
+# includes 301 from www requests to non-www requests
+server{
+    listen 80;
+    server_name www.example.com;
+    rewrite ^ http://example.com/$request_uri? permanent;
+}
+server {
+    listen 80;
+    server_name example.com;
+    
+    access_log /path/to/access.log;
+    error_log /path/to/error.log;
+
+    location / {
+        root /path/to/project/;
+        index index.html;
+        }
+}

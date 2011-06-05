@@ -1,0 +1,10 @@
+unfortunately I haven't figured out how to create standalone tests...
+but this functions perfectly well against a live server
+
+tests require the node modules "tobi" and "should"
+
+terminal one:
+~/myproject/ -> coffee app.coffee
+
+terminal two:
+~/myproject/ -> coffee tests/spec.coffee

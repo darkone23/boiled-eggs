@@ -1,0 +1,31 @@
+@total_width: 960px; // these values are all configureable
+@grid_number: 16; // number of grids must be a denomination of total_width
+@gutters: 8px; // this can be any even number
+
+@grid_width: (@total_width - (@gutters * @grid_number)) / @grid_number;
+@gridgut: @grid_width + @gutters;
+
+.grid(@num) {
+  width: (@gridgut * @num) - @gutters;
+  margin: 0px (@gutters/2);
+  float: left;
+}
+.grid_alpha(@num) {
+  width: ((@grid_width + @gutters) * @num) - @gutters;
+  margin: 0px (@gutters/2) 0px 0px;
+  float: left;
+}
+.grid_omega(@num) {
+  width: ((@grid_width + @gutters) * @num) - @gutters;
+  margin: 0px 0px 0px (@gutters/2);
+  float: left;
+}
+.suf(@num) {
+  padding-right: @gridgut * @num;
+  }
+.pre(@num) {
+  padding-left: @gridgut * @num;
+  }
+.clear() {
+  clear:both;
+}

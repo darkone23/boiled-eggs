@@ -1,0 +1,7 @@
+boilerplate for a project built with less css, jade and express
+requires node.js, express, jade, and optionally less and coffeescript
+tests are done with tobi and should.js
+
+static files are served from ./public
+templates/views are stored in ./views
+tests are stored in ./tests

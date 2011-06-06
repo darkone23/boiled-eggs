@@ -1,0 +1,118 @@
+/* ie specific hacks */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+.ie6 legend, .ie7 legend {
+  margin-left: -7px;
+}
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline;
+}
+.ie7 img {
+  -ms-interpolation-mode: bicubic;
+}
+.ie6 input {
+  vertical-align: text-bottom;
+}
+/*
+    // ========================================== \\
+   ||                                              ||
+   ||               Your styles !                  ||
+   ||                 ~custom~                     ||
+   ||                                              ||
+    \\ ========================================== //
+*/
+::-moz-selection {
+  background: #FF5E99;
+  color: #fff;
+  text-shadow: none;
+}
+::selection {
+  background: #FF5E99;
+  color: #fff;
+  text-shadow: none;
+}
+a:link {
+  -webkit-tap-highlight-color: #FF5E99;
+}
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+.clearfix:before, .clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+@media all and (orientation:portrait) {
+  /* default tablet portrait layout */
+}
+@media all and (orientation:landscape) {
+  /* default tablet landscape layout */
+}
+@media screen and (max-device-width: 767px) {
+  /* device window less than 767px (smartphones) */
+}
+@media screen and (max-device-width: 480px) {
+  /* iiiittty little bitty bitty */
+}
+@media print {
+  /* printer styles */
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+  a, a:visited {
+    color: #444 !important;
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr, img {
+    page-break-inside: avoid;
+  }
+  @page  {
+    margin: 0.5cm;
+  }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}
